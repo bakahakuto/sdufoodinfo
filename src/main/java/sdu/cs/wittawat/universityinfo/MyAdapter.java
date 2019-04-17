@@ -8,11 +8,14 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
 public class MyAdapter extends BaseAdapter {
-
     //explicit
     Context context;
     int[] ints; //เก็บโลโก้
 
+    public MyAdapter(Context context, int[] ints) {
+        this.context = context;
+        this.ints = ints;
+    }
 
     @Override
     public int getCount() {
@@ -30,15 +33,18 @@ public class MyAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
-    } //นำข้อมูลที่ได้จาก method getCount ไปแสดงผลขนหน้าแอป
+    public View getView(int position, View convertView, ViewGroup viewGroup) {
 
-    LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE); //ดึงค่าจากxmlมาแสดง
+        //นำข้อมูลที่ได้จาก method getCount ไปแสดงผลขนหน้าแอป
+        LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE); //ดึงค่าจากxmlมาแสดง
+        View view1 = layoutInflater.inflate(R.layout.inlist, viewGroup, false);
 
-    View view1 = layoutInflater.inflate(R.layout.inlist, viewGroup, false);
+        //ผูกตัวแปรjavaกับxml
+        ImageView iconImageView = view1.findViewById(R.id.imageView);
 
-    //ผูกตัวแปรjavaกับxml
-    ImageView iconImageView = view1.findViewById(R.id.imageView);
+        //show view นำข้อมูลมาแสดงบนแอป
+        iconImageView.setImageResource(ints[position]);
 
+        return view1;
+    }
 }
