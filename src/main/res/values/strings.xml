@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">UniversityInfo</string>
+    <string name="title_activity_my_adapter">MyAdapter</string>
 </resources>
