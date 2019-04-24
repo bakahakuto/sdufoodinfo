@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
             {
                     R.drawable.logo1, R.drawable.logo2, R.drawable.logo3,
                     R.drawable.logo4, R.drawable.logo5, R.drawable.logo6,
-                    R.drawable.logo7, R.drawable.logo8, R.drawable.logo9,   };
+                    R.drawable.logo7, R.drawable.logo8, R.drawable.logo9,       };
     String[] detailString, approach1, approach2, approach3, driveString, responsibleString;
     Image aboutApp;
 
@@ -30,11 +30,11 @@ public class MainActivity extends AppCompatActivity {
 
         //ดึงค่าจากmy contentมาลงxml
         detailString = getResources().getStringArray(R.array.detail);
-        approach1 = getResources().getStringArray(R.array.approach1);
+        /* approach1 = getResources().getStringArray(R.array.approach1);
         approach2 = getResources().getStringArray(R.array.approach2);
         approach3 = getResources().getStringArray(R.array.approach3);
         driveString = getResources().getStringArray(R.array.drive);
-        responsibleString = getResources().getStringArray(R.array.responsible);
+        responsibleString = getResources().getStringArray(R.array.responsible); */
 
         //create listview
         MyAdapter myAdapter = new MyAdapter(MainActivity.this, ints);
@@ -49,9 +49,9 @@ public class MainActivity extends AppCompatActivity {
                 //ส่งdata
                 infoIntent.putExtra("Logo", ints[i]);
                 infoIntent.putExtra("Detail", detailString[i]);
-                infoIntent.putExtra("Approach1", approach1[i]);
+                /* infoIntent.putExtra("Approach1", approach1[i]);
                 infoIntent.putExtra("Approach2", approach2[i]);
-                infoIntent.putExtra("Approach3", approach3[i]);
+                infoIntent.putExtra("Approach3", approach3[i]); */
                 //เริ่มส่ง
                 startActivity(infoIntent);
             }
